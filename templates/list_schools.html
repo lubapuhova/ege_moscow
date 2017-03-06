@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All schools</title>
+    <script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+{% for row in data %}
+    <li>
+        <a href="{{ url_for('show_school',
+n = loop.index0) }}">
+        {{ row['Cells']['EDU_NAME'] }}
+         </a>
+        <button data-index="{{ loop.index0 }}" class ="preview_button">
+        pезультаты
+        </button>
+    </li>
+    {% endfor %}
+<div id="bar">
+
+</div>
+
+<script>
+  function show_picture(index) {
+    $.getJSON("json_table/"+index, function(data) {
+        console.log(data.x);
+        Plotly.newPlot('bar', [{ x: data.y, y: data.x, type: 'bar'}]);
+        });
+    }
+
+    $(document).ready(function() {
+        $(".preview_button").click(
+            function () {
+                show_picture($(this).data('index'))
+             }
+         )
+    })
+</script>
+</body>
+</html>
