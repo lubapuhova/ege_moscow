@@ -10,6 +10,13 @@ def get_data():
     return r.json()
 
 @app.route('/')
+def main_page():
+    data = get_data()
+    districts = [row['Cells']['District'] for row in data if 'Cells' in row]
+    return render_template("main_page.html",
+                             districts = districts)
+
+@app.route('/list_schools')
 def list_schools():
     data = get_data()
     return render_template("list_schools.html",
