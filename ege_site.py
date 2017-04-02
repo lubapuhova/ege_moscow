@@ -9,12 +9,26 @@ def get_data():
     r = requests.get(url)
     return r.json()
 
+
 @app.route('/')
 def main_page():
     data = get_data()
     districts = [row['Cells']['District'] for row in data if 'Cells' in row]
     return render_template("main_page.html",
                              districts = districts)
+
+@app.route('/district/<int:n>')
+def show_district(n):
+    data = get_data()
+    districts = [row['Cells']['District'] for row in data if 'Cells' in row]
+    new_data = []
+    for row in data:
+        if row['Cells']['District'] == districts[n]:
+            new_data.append(row)
+    return render_template("show_district.html",
+                            new_data = new_data)
+
+
 
 @app.route('/list_schools')
 def list_schools():
@@ -29,7 +43,7 @@ def show_school(n):
     data = get_data()
     row = data[n]
     return render_template("show_school.html",
-                           row=row)
+                        row=row)
 
 @app.route('/json_table/<int:n>')
 def json_table (n):

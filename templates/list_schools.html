@@ -5,8 +5,15 @@
     <title>All schools</title>
     <script src = "https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 <body>
+<div class="'container">
+    <div class="row">
+        <h1>Школы города Москвы</h1>
+    <div class="col-md-6">
+        <ul>
 {% for row in data %}
     <li>
         <a href="{{ url_for('show_school',
@@ -18,10 +25,15 @@ n = loop.index0) }}">
         </button>
     </li>
     {% endfor %}
+            </ul>
+            </div>
+<div class="col-md-6">
 <div id="bar">
 
 </div>
-
+    </div>
+        </div>
+</div>
 <script>
   function show_picture(index) {
     $.getJSON("json_table/"+index, function(data) {
@@ -38,5 +50,6 @@ n = loop.index0) }}">
          )
     })
 </script>
+
 </body>
 </html>

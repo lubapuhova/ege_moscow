@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>District</title>
+</head>
+<body>
+{% for row in new_data %}
+<table>
+    <tr>
+        {{ row['Cells']['EDU_NAME'] }}
+    </tr>
+    <tr>
+        <th>Год</th>
+        <th>Число учеников</th>
+        <th>Ниже 160</th>
+        <th>Выше 220</th>
+    </tr>
+
+    <tr>
+        <td>
+            {{ row['Cells']['YEAR'] }}
+        </td>
+        <td>
+            {{ row['Cells']['PASSED_NUMBER_FULL'] }}
+        </td>
+        <td>
+            {{ row['Cells']['PASSER_UNDER_160'] }}
+        </td>
+        <td>
+            {{ row['Cells']['PASSES_OVER_220'] }}
+        </td>
+    </tr>
+</table>
+{% endfor %}
+
+</body>
+</html>
