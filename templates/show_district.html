@@ -19,6 +19,14 @@
   </style>
 </head>
 <body>
+<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                  <a href="{{ url_for('main_page') }}">Все районы</a>
+                  <a href="{{ url_for('list_schools') }}">Все школы</a>
+              </li>
+            </ul>
+</div>
 <div class="'container">
     <div class = 'row' align="center"> <h1>{{ district }} </h1></div>
 {% for row in new_data %}

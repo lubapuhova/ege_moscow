@@ -16,8 +16,18 @@
     background: #b0e0e6;
    }
   </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                  <a href="{{ url_for('main_page') }}">Все районы</a>
+                  <a href="{{ url_for('list_schools') }}">Все школы</a>
+              </li>
+            </ul>
+</div>
 </head>
 <body>
+
 <table>
     <thead>
     <tr>

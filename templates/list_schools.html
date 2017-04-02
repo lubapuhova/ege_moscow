@@ -9,9 +9,16 @@
 
 </head>
 <body>
+<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active">
+                  <a href="{{ url_for('main_page') }}">Все районы</a>
+              </li>
+            </ul>
+</div>
 <div class="'container">
     <div class="row">
-        <h1>Школы города Москвы</h1>
+        <h1 align="center">Школы города Москвы</h1>
     <div class="col-md-6">
         <ul>
 {% for row in data %}
