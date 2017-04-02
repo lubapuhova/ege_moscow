@@ -26,21 +26,8 @@ def show_district(n):
     for row in data:
         if row['Cells']['District'] == districts[n]:
             new_data.append(row)
-            district = row['Cells']['District']
-    all_student = 0
-    bad = 0
-    good = 0
-    some_list = []
-    for row in new_data:
-        all_student += int(row['Cells']['PASSED_NUMBER_FULL'])
-        bad += int(row['Cells']['PASSER_UNDER_160'])
-        good += int(row['Cells']['PASSES_OVER_220'])
-    some_list.append(district)
-    some_list.append(all_student)
-    some_list.append(bad)
-    some_list.append(good)
     return render_template("show_district.html",
-                            some_list = some_list, new_data = new_data)
+                            new_data = new_data)
 
 
 
