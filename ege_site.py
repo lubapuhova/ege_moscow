@@ -31,9 +31,9 @@ def show_district(n):
     bad = 0
     good = 0
     for row in new_data:
-        all_student += row['Cells']['PASSED_NUMBER_FULL']
-        bad += row['Cells']['PASSER_UNDER_160']
-        good += row['Cells']['PASSES_OVER_220']
+        all_student += int(row['Cells']['PASSED_NUMBER_FULL'])
+        bad += int(row['Cells']['PASSER_UNDER_160'])
+        good += int(row['Cells']['PASSES_OVER_220'])
     return render_template("show_district.html",
                             district = district, new_data = new_data, all_student = all_student, bad = bad, good = good)
 
