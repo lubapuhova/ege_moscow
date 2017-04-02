@@ -3,13 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>District</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style type="text/css">
+   TABLE {
+    width: 1000px;
+    border-collapse: collapse;
+   }
+   TD, TH {
+    padding: 3px;
+    border: 1px solid black;
+   }
+   TH {
+    background: #b0e0e6;
+   }
+  </style>
 </head>
 <body>
+<div class="'container">
 {% for row in new_data %}
 <table>
+    <thead>
     <tr>
         {{ row['Cells']['EDU_NAME'] }}
     </tr>
+    </thead>
     <tr>
         <th>Год</th>
         <th>Число учеников</th>
@@ -33,6 +50,6 @@
     </tr>
 </table>
 {% endfor %}
-
+</div>
 </body>
 </html>

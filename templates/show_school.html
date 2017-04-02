@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>School</title>
+<style type="text/css">
+   TABLE {
+    width: 300px;
+    border-collapse: collapse;
+   }
+   TD, TH {
+    padding: 3px;
+    border: 1px solid black;
+   }
+   TH {
+    background: #b0e0e6;
+   }
+  </style>
 </head>
 <body>
 <table>
+    <thead>
+    <tr>
+        {{ row['Cells']['EDU_NAME'] }}
+    </tr>
     <tr>
         <th>Год</th>
         <th>Число учеников</th>
